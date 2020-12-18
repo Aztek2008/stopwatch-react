@@ -1,0 +1,16 @@
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Buttons {
+  border: 0;
+  background-color: #eef7d6;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  font-family: roboto;
+  font-size: 16px;
+  margin: 10px;
+}

@@ -1,0 +1,18 @@
+.StopwatchContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  min-height: 100px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 25px;
+  font-family: roboto;
+}
+
+.ValueContainer {
+  display: block;
+  margin: 0 auto;
+}

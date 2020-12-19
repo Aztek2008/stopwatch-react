@@ -12,7 +12,7 @@ export default class Stopwatch extends Component {
     countTime: 0,
   };
 
-  startTimer = () => {
+  startCounter = () => {
     this.setState({
       countOn: true,
       countTime: this.state.countTime,
@@ -23,13 +23,20 @@ export default class Stopwatch extends Component {
     }, 1000);
   };
 
-  stopTimer = () => {
+  stopCounter = () => {
     this.setState({ countOn: false, countTime: 0 });
     clearInterval(this.counter);
   };
-  pauseTimer = () => {
+
+  pauseCounter = () => {
     this.setState({ countOn: false });
     clearInterval(this.counter);
+  };
+
+  resetCounter = async () => {
+    await this.setState({ countTime: 0, countStart: 0 });
+    clearInterval(this.counter);
+    this.startCounter();
   };
 
   render() {
@@ -41,9 +48,9 @@ export default class Stopwatch extends Component {
         <span className={style.ValueContainer}>{_timeString}</span>
         <Controls
           countOn={countOn}
-          onAction={!countOn ? this.startTimer : this.stopTimer}
-          onPause={this.pauseTimer}
-          onReset={this.stopTimer}
+          onAction={!countOn ? this.startCounter : this.stopCounter}
+          onPause={this.pauseCounter}
+          onReset={countOn && this.resetCounter}
         />
       </div>
     );
